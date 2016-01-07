@@ -27,6 +27,7 @@
   "homepage": "https://github.com/amchang/gt-registration-script#readme",
   "dependencies": {
     "selenium-standalone": "^4.8.0",
-    "webdriverio": "^3.4.0"
+    "webdriverio": "^3.4.0",
+    "yargs": "^3.31.0"
   }
 }
