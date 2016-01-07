@@ -1,0 +1,32 @@
+{
+  "name": "gt-registration-script",
+  "version": "0.0.1",
+  "description": "An automated way to register for classes",
+  "main": "index.js",
+  "scripts": {
+    "install": "selenium-standalone install",
+    "server": "selenium-standalone start",
+    "start": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amchang/gt-registration-script.git"
+  },
+  "keywords": [
+    "georgia",
+    "tech",
+    "student",
+    "registration"
+  ],
+  "author": "Adrian <adrian.chang@yahoo.com>",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/amchang/gt-registration-script/issues"
+  },
+  "homepage": "https://github.com/amchang/gt-registration-script#readme",
+  "dependencies": {
+    "selenium-standalone": "^4.8.0",
+    "webdriverio": "^3.4.0"
+  }
+}
