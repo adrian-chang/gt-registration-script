@@ -6,8 +6,7 @@
   "scripts": {
     "install": "selenium-standalone install",
     "server": "selenium-standalone start",
-    "start": "node ./index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./index.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +18,7 @@
     "student",
     "registration"
   ],
-  "author": "Adrian <adrian.chang@yahoo.com>",
+  "author": "Adrian Chang <adrian.chang@yahoo.com>",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
     "url": "https://github.com/amchang/gt-registration-script/issues"
