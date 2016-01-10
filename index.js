@@ -21,6 +21,7 @@ let argv = yargs.demand('u')
   .alias('u', 'username')
   .demand('u')
   .nargs('u', 1)
+  // password and username
   .describe('u', 'GT Username')
   .alias('p', 'password')
   .demand('p')
@@ -29,7 +30,6 @@ let argv = yargs.demand('u')
   .example('node $0 -u username -p password')
   .command('register', 'register for classes')
   .command('lookup', 'lookup classes')
-  .help('help')
   .argv;
 
 // get the command
@@ -83,3 +83,5 @@ client
         console.log('Title is: ' + title);
         // outputs: "Title is: WebdriverIO (Software) at DuckDuckGo"
     });
+
+client.end();
