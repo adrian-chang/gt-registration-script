@@ -1,6 +1,6 @@
 {
   "name": "gt-registration-script",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "An automated way to register for classes",
   "main": "index.js",
   "scripts": {
