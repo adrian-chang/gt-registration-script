@@ -5,15 +5,18 @@
  */
 'use strict';
 
+// cli and the actual web driver
 const webdriverio = require('webdriverio'),
       yargs = require('yargs');
 
+// setup the actual driver options here
 const options = { 
   desiredCapabilities: { 
     browserName: 'chrome' 
   } 
 };
-
+  
+// start the session
 let client = webdriverio.remote(options);
 
 // setup the credentials command line
@@ -30,6 +33,7 @@ let argv = yargs.demand('u')
   .example('node $0 -u username -p password')
   .command('register', 'register for classes')
   .command('lookup', 'lookup classes')
+  .help('help')
   .argv;
 
 // get the command
@@ -48,29 +52,42 @@ client = client.init()
   .addValue('input[type="password"]', argv.p)
   .click('input[type="submit"][value="Login"]');
 
-if (command === 'register') {
-  argv = yargs
-    .reset()
-    .array('c')
-    .alias('c', 'classes')
-    .demand('c')
-    .nargs('c', 1)
-    .usage('register')
-    .example('$0 register -c 1234 4567')
-    .help('h')
-    .alias('h', 'help')
-    .argv;
-} else if (command === 'lookup') {
-    yargs
+// let's figure out what else is needed for the command
+switch (command) {
+  // let's register for a class
+  case 'register':
+    argv = yargs
+      .reset()
+      .array('c')
+      .alias('c', 'classes')
+      .demand('c')
+      .nargs('c', 1)
+      .usage('register')
+      .example('$0 register -c 1234 4567')
+      .help('h')
+      .alias('h', 'help')
+      .argv;
+    break;
+  // I generally want to lookup all classes for this semester
+  case 'lookup':
+    argv = yargs
     .reset()
     .usage('$0 lookup');
+
+    break;
+  case 'schedule':
+    break;
+  // unknown, show help
+  default:
+    yargs.showHelp();
+    break;
 }
 
 // go through the shared menus
 client = client
   .click('a[href="/pls/bprod/twbkwbis.P_GenMenu?name=bmenu.P_StuMainMnu"]')
   .click('a[href="/pls/bprod/twbkwbis.P_GenMenu?name=bmenu.P_RegMnu"]');
-
+/*
   /pls/bprod/bwskfcls.p_sel_crse_search
 
 client
@@ -78,10 +95,10 @@ client
     /*.frame(client.element('frame[name="content"]'))
     .setValue('#crn_id1', argv.c[0])
     .setValue('#crn_id2', argv.c[1])
-    .click('input[type="submit"][value="Submit Changes"])')*/
+    .click('input[type="submit"][value="Submit Changes"])')
     .getTitle().then(function(title) {
         console.log('Title is: ' + title);
         // outputs: "Title is: WebdriverIO (Software) at DuckDuckGo"
     });
-
+*/
 client.end();

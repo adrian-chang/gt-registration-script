@@ -1,21 +1,28 @@
 #gt-registration-script
 
-This is a simple script which can be run to register for classes in an automated fashion at **Georgia Tech**. It is not guaranteed to work if Georgia Tech changes Oscar.
+This is a simple script which can be run to register for classes, view your schedule, or to view **CS / CSE** classes for the current semester, in an automated fashion at **Georgia Tech**.
 
-** Use this script at your own risk. If Georgia Tech bans you for abusing their computing resources while using this script, it is your own responsibility to remove your own ban. **
+For registration, it will not resolve waitlist issues or handle errors with classes being full.
+
+When viewing your schedule, it will only display your schedule for the current semester.
+
+** Use this script at your own risk. If Georgia Tech bans you for abusing their computing resources while using this script, it is your own responsibility to resolve your own ban. **
+
+** It is not guaranteed to work if Georgia Tech changes [Oscar](http://oscar.gatech.edu). (Working as of 1/10/16) **
 
 ## Requirements
 1. `node 4.x` or higher
 2. `npm 3.x`
 3. Chrome Web Browser
-4. `java 1.8`
+4. `java 1.6`
+5. `*Nix` System, sorry I'm not sure if this will work on Windows at all.
 
 ## Install
 1. Checkout the repository
 2. `npm install`
 3. `npm run install` (will install selenium with chrome driver)
 
-## Example
+## Examples
 ```
 npm run start --
 ```
@@ -36,20 +43,8 @@ Options:
 Examples:
   node index.js -u username -p password
 
----
-
-node ./index.js "-u=user" "-p=password" "register" "-h"
-
-register
-
-Options:
-  -h, --help     Show help                                             [boolean]
-  -c, --classes                                               [array] [required]
-
-Examples:
-  index.js register -c 1234 4567
-
 ```
+Run each command with `-h/--help` to see each command's arguments.
 
 ## License
 
