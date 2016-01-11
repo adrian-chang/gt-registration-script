@@ -6,11 +6,11 @@ For registration, it will not resolve waitlist issues or handle errors with clas
 
 When viewing your schedule, it will only display your schedule for the current semester.
 
-** Use this script at your own risk. If Georgia Tech bans you for abusing their computing resources while using this script, it is your own responsibility to resolve your own ban. **
+**Use this script at your own risk. If Georgia Tech bans you for abusing their computing resources while using this script, it is your own responsibility to resolve your own ban.**
 
-** It is not guaranteed to work if Georgia Tech changes [Oscar](http://oscar.gatech.edu). (Working as of 1/10/16) **
+**It is not guaranteed to work if Georgia Tech changes [Oscar](http://oscar.gatech.edu). (Working as of 1/10/16)**
 
-** No password or username information is stored outside of your local machine. **
+**No password or username information is stored outside of your local machine.**
 
 ## Requirements
 1. `node 4.x` or higher
